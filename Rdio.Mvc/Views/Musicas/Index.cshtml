@@ -1,0 +1,86 @@
+﻿@model IEnumerable<Rdio.Mvc.Core.Domain.Music>
+
+@using Rdio.Mvc.Helpers
+
+@{
+    ViewBag.Title = "Músicas";
+}
+
+@section JavascriptDataTable {
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example0').DataTable();
+    });
+</script>
+}
+
+<div class="page-header">
+    <h1 class="title">Músicas</h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Home")">Dashboard</a></li>
+        <li><a href="@Url.Action("Index")">Músicas</a></li>
+        <li class="active">Músicas</li>
+    </ol>
+</div>
+
+<div class="container-padding">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-title">
+                My Musics
+            </div>
+            <div class="panel-body table-responsive">
+                <div id="example0_wrapper" class="dataTables_wrapper">
+
+                    <table id="example0" class="table display dataTable" role="grid" aria-describedby="example0_info">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="example0" rowspan="1" colspan="1" aria-sort="ascending" style="width: 302px;">
+                                    @Html.DisplayName("Música")
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example0" rowspan="1" colspan="1" style="width: 190px">
+                                    @Html.DisplayName("Artista")
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example0" rowspan="1" colspan="1" style="width: 143px;">
+                                    @Html.DisplayName("Album")
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example0" rowspan="1" colspan="1" style="width: 71px; text-align: center">
+                                    @Html.DisplayName("Track Number")
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example0" rowspan="1" colspan="1" style="width: 100px;">
+                                    @Html.DisplayName("Gênero")
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example0" rowspan="1" colspan="1" style="width: 113px;">
+                                    @Html.DisplayName("Classificação")
+                                </th>
+                                <th aria-controls="example0" rowspan="1" colspan="1" style="width: 95px;"></th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            
+                            @foreach(var item in Model)
+                            {
+                                <tr role="row" class="odd">
+                                    <td class="sorting_1">@Html.DisplayFor(modelItem => item.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Artista.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.AlbumCollection.Name)</td>
+                                    <td style="text-align: center">@Html.DisplayFor(modelItem => item.TrackNumber)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Genero.Descricao)</td>
+                                    <td>                                        
+                                        @Html.Rating(modelItem => item.Rating, true, null)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-info btn-xs" })
+                                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-success btn-xs" })
+                                    </td>
+                                </tr>
+                            }                            
+                        </tbody>
+                    </table>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

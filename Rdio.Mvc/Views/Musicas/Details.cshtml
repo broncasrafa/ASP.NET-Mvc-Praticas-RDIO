@@ -1,0 +1,51 @@
+﻿@model Rdio.Mvc.Core.Domain.Music
+
+@using Rdio.Mvc.Helpers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="page-header">
+    <h1 class="title">Music</h1>
+    <ol class="breadcrumb">
+        <li class="active">This is a quick overview of details music</li>
+    </ol>
+</div>
+
+<div class="row page-header">
+    <div class="col-md-2">
+        @if (Model.AlbumCollection.PhotoAlbum != null)
+        {
+            <img class="img-responsive" src="@Url.Action("ExibirImagemAlbum", "Albums", new { id = Model.AlbumCollection.Id })" id="album" alt="album" width=200 height="200">
+        }
+        else
+        {
+            <img class="img-responsive" src="http://placehold.it/200x200" alt="">
+        }
+    </div>
+
+    <div class="col-md-10" style="">
+        <h4 style="color:#646464; font-family:'Segoe UI', Tahoma, sans-serif; font-size: 20pt; margin-top: 3px !important; margin-bottom: 0px !important;">
+            @Html.DisplayFor(model => Model.Name)
+        </h4>
+        <p style="color:#999999; font-family:'Segoe UI', Tahoma, sans-serif; font-size: 13pt;">
+            @Html.DisplayFor(model => Model.Artista.Name)
+        </p>
+        <p style="color:#999999; font-family:'Segoe UI', Tahoma, sans-serif; font-size: 13pt;">
+            @Html.DisplayFor(model => Model.AlbumCollection.Name)
+        </p>
+        <p style="color:#999999; font-family:'Segoe UI', Tahoma, sans-serif; font-size: 13pt;">
+           # @Html.DisplayFor(model => Model.TrackNumber)
+        </p>
+        <p style="color:#999999; font-family:'Segoe UI', Tahoma, sans-serif; font-size: 10pt;">
+            @Html.DisplayFor(model => Model.Genero.Descricao)
+        </p>
+        <p>
+            @Html.Rating(modelItem => Model.Rating, true, null)
+        </p>
+    </div>
+
+    @Html.ActionImage("Index", "Musicas", null, "btn-light", "btn-xs", "fa-mail-reply", "Voltar", null)
+</div>
+

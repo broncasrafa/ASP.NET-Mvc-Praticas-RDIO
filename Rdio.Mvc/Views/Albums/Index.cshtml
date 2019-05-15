@@ -1,0 +1,83 @@
+﻿@using PagedList.Mvc;
+
+@model PagedList.PagedList<Rdio.Mvc.Core.Domain.Album>
+
+@*@model IEnumerable<Rdio.Mvc.Core.Domain.Album>*@
+
+@{
+    ViewBag.Title = "Albums";
+}
+
+@*@section AddToHead {
+        <link href="@Url.Content("~/css/plugin/album/simple-line-icons.min.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/css/plugin/album/bootstrap-switch.min.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/css/plugin/album/cubeportfolio.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/css/plugin/album/components-md.min.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/css/plugin/album/plugins-md.min.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/css/plugin/album/portfolio.min.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/css/plugin/album/layout.min.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/css/plugin/album/darkblue.min.css")" rel="stylesheet" />
+        <link href="@Url.Content("~/css/plugin/album/custom.min.css")" rel="stylesheet" />
+    }*@
+
+@*@Styles.Render("~/bundles/album")*@
+
+
+<div class="page-header">
+    <h1 class="title">Collections</h1>
+    <ol class="breadcrumb">
+        <li class="active">This is a quick overview of some albums</li>
+        <li class="pull-right">Page @Model.PageNumber of @Model.PageCount</li>
+    </ol>
+</div>
+<div class="page-header">
+    <div style="position: absolute; right: 12px; bottom: -13px; min-width: 500px; text-align: right;">
+        <div class="btn-group" role="group" aria-label="...">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.TwitterBootstrapPager)
+        </div>
+    </div>
+</div>
+
+
+<div class="container-widget">
+
+    <div class="row">
+        @foreach (var album in Model)
+        {
+            <div class="col-md-2 portfolio-item" style="height:300px">
+                <a href="@Url.Action("Details", "Albums", new { id = album.Id }) ">
+
+                    @if (album.PhotoAlbum != null)
+                    {
+                        <img class="img-responsive" src="@Url.Action("ExibirImagemAlbum", "Albums", new { id = album.Id })" id="album" alt="album" width=650 height="650">
+                    }
+                    else
+                    {
+                        <img class="img-responsive" src="http://placehold.it/650x650" alt="">
+                    }
+                </a>
+
+                <h4 style="color:#37363e; font-size: 10pt; margin-top: 3px !important; margin-bottom: 7px !important;">
+                    @album.Name
+                </h4>
+                <p style="margin:-10px 0 10px !important; color:#999 !important;">
+                    @album.Artista.Name
+                </p>
+                <p style="margin:-13px 0 10px !important; color:#999 !important;">@album.Musics.Count musicas</p>
+            </div>            
+        }
+    </div>
+
+    <div class="row">
+        <span class="btn-group pull-right">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
+        </span>
+    </div>
+    <div class="row">
+        <span class="btn-group pull-right">
+
+        </span>
+    </div>
+
+</div>
+

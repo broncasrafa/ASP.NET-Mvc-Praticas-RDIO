@@ -1,0 +1,14 @@
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\obj\Debug\Rdio.Mvc.Testes.csprojResolveAssemblyReference.cache
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\Rdio.Mvc.Testes.exe.config
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\Rdio.Mvc.Testes.exe
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\Rdio.Mvc.Testes.pdb
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\Rdio.Mvc.Core.dll
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\Rdio.Mvc.Persistence.dll
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\EntityFramework.dll
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\Rdio.Mvc.Core.pdb
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\Rdio.Mvc.Persistence.pdb
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\EntityFramework.xml
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\obj\Debug\Rdio.Mvc.Testes.exe
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\obj\Debug\Rdio.Mvc.Testes.pdb
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Testes\bin\Debug\EntityFramework.SqlServer.xml

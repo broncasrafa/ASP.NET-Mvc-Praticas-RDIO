@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My Rdio Musics</title>
+
+    <link rel="shortcut icon" href="~/img/Rdio_ico.ico" type="image/x-icon" />   
+    
+    @*@Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")*@
+    
+
+    <link href="~/css/root.css" rel="stylesheet" />
+    
+
+    @*@if (IsSectionDefined("AddToHead"))
+    {
+        @RenderSection("AddToHead", required: false)
+    }*@
+
+</head>
+<body>
+    <!-- START PAGE LOADING -->
+    <div class="loading" style="display: none;">
+        <img src="~/img/loading.gif" alt="loading-img">
+    </div>    
+    <!-- END PAGE LOADING -->
+
+
+    <!-- START TOP -->
+    <div id="top" class="clearfix">
+        <!-- Start App Logo -->
+        <div class="applogo">
+            <img src="~/img/rdio_logofinal.png" style="width: 150px; margin-top: -27px;"/>
+            @*<a href="#" class="logo">rdio</a>*@
+        </div>
+        <!-- End App Logo -->
+
+        <!-- Start Sidebar Show Hide Button -->
+        <a href="http://egemem.com/theme/kode/v1.1/blank.html#" class="sidebar-open-button"><i class="fa fa-bars"></i></a>
+        <a href="http://egemem.com/theme/kode/v1.1/blank.html#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
+        <!-- End Sidebar Show Hide Button -->
+
+        <!-- Start Searchbox -->
+        <form class="searchform">
+            <input type="text" class="searchbox" id="searchbox" placeholder="Search">
+            <span class="searchbutton">
+                <i class="fa fa-search"></i>
+            </span>
+        </form>
+        <!-- End Searchbox -->
+        
+        <!-- Start Top Right -->
+        <ul class="top-right">
+            <li class="dropdown link">
+                <a href="http://egemem.com/theme/kode/v1.1/blank.html#" data-toggle="dropdown" class="dropdown-toggle profilebox">
+                    <img src="~/img/profileimg.png" alt="img" />
+                    <b>Rafael Francisco</b>
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-list dropdown-menu-right">
+                    <li role="presentation" class="dropdown-header">Profile</li>
+                    <li><a href="http://egemem.com/theme/kode/v1.1/blank.html#"><i class="fa falist fa-inbox"></i>Inbox<span class="badge label-danger">4</span></a></li>
+                    <li><a href="http://egemem.com/theme/kode/v1.1/blank.html#"><i class="fa falist fa-file-o"></i>Files</a></li>
+                    <li><a href="http://egemem.com/theme/kode/v1.1/blank.html#"><i class="fa falist fa-wrench"></i>Settings</a></li>
+                    <li class="divider"></li>
+                    <li><a href="http://egemem.com/theme/kode/v1.1/blank.html#"><i class="fa falist fa-lock"></i> Lockscreen</a></li>
+                    <li><a href="http://egemem.com/theme/kode/v1.1/blank.html#"><i class="fa falist fa-power-off"></i> Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- End Top Right -->
+    </div>
+    <!-- END TOP -->
+
+
+    <!-- START SIDEBAR MENU -->
+    <div class="sidebar clearfix">
+        <ul class="sidebar-panel nav">
+            <li class="sidetitle">MAIN</li>
+            <li><a href="@Url.Action("Index", "Home")"><span class="icon color5"><i class="fa fa-home"></i></span>Dashboard</a></li>            
+            <li><a href="@Url.Action("Index", "Musicas")"><span class="icon color5"><i class="ion-ios-musical-notes"></i></span>Musics</a></li>
+            <li><a href="@Url.Action("Index", "Artistas")"><span class="icon color5"><i class="ion-mic-b"></i></span>Artists</a></li>
+            <li><a href="@Url.Action("Index", "Albums")"><span class="icon color5"><i class="ion-disc"></i></span>Collection</a></li>
+            <li><a href="@Url.Action("Index", "Generos")"><span class="icon color5"><i class="ion-ios-musical-note"></i></span>Gênero</a></li>
+            <li data-pack="ios">
+                <a href="#"><span class="icon color7"><i class="ion-ios-star-half"></i></span>Classificações<span class="caret"></span></a>
+                <ul>
+                    <li><a href="#">Sem Classificação</a></li>
+                    <li><a href="#">1 estrela</a></li>
+                    <li><a href="#">2 estrela</a></li>
+                    <li><a href="#">3 estrela</a></li>
+                    <li><a href="#">4 estrela</a></li>
+                    <li><a href="#">5 estrela</a></li>
+                </ul>
+            </li>            
+        </ul>        
+    </div>
+    <!-- END SIDEBAR MENU -->
+
+
+    <!-- START CONTENT AND FOOTER -->
+    <div class="content">
+        
+        <!-- START CONTAINER -->
+        <div class="container-default">            
+            @RenderBody()
+        </div>
+        <!-- END CONTAINER -->
+        
+        <!-- START FOOTER -->
+        <div class="row footer">
+            <div class="col-md-6 text-left">
+                Copyright © @DateTime.Now.Year <a href="http://www.google.com" target="_blank">R-Group Solutions</a> Todos os direitos reservados.
+            </div>
+            <div class="col-md-6 text-right">
+                Design and Developed by <a href="http://www.google.com" target="_blank">R-Group Solutions</a>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+
+    </div>
+    <!-- END CONTENT AND FOOTER -->
+    
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/star-rating.js"></script>
+    <script src="~/js/datatables/datatables.min.js"></script>
+
+    @*
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    *@
+
+    @if (IsSectionDefined("JavascriptDataTable"))
+    {
+        @RenderSection("JavascriptDataTable");
+    }
+
+    @*@if (IsSectionDefined("JavaScriptAlbumList"))
+    {
+        @RenderSection("JavaScriptAlbumList")
+    }*@
+    
+</body>
+</html>

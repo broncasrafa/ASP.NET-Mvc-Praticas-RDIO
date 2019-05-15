@@ -1,0 +1,5 @@
+C:\Users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Core\bin\Debug\Rdio.Mvc.Core.dll
+C:\Users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Core\bin\Debug\Rdio.Mvc.Core.pdb
+C:\Users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Core\obj\Debug\Rdio.Mvc.Core.csprojResolveAssemblyReference.cache
+C:\Users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Core\obj\Debug\Rdio.Mvc.Core.dll
+C:\Users\rfrancisco\documents\visual studio 2015\Projects\Teste.Rdio.Mvc\Rdio.Mvc.Core\obj\Debug\Rdio.Mvc.Core.pdb

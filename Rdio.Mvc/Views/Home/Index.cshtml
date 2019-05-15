@@ -1,0 +1,177 @@
+﻿@using Rdio.Mvc.ViewModels
+@using Rdio.Mvc.Helpers
+@using System.Linq
+
+@model StatusGeralViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<link href="~/css/shortcuts.css" rel="stylesheet" />
+
+<!-- Start Page Header -->
+<div class="page-header">
+    <h1 class="title">Dashboard</h1>
+    <ol class="breadcrumb">
+        <li class="active">This is a quick overview of some musics</li>
+    </ol>
+</div>
+<!-- End Page Header -->
+
+<div class="container-widget">
+    <div class="col-md-12">
+        <ul class="topstats clearfix">
+            @*<li class="arrow"></li>*@
+            <li class="col-xs-6 col-lg-2">
+                <span class="title"><i class="fa fa-music"></i> Músicas</span>
+                <h3>@Html.DisplayFor(model => model.TotalMusicas)</h3>                
+            </li>
+            <li class="col-xs-6 col-lg-2">
+                <span class="title"><i class="fa fa-microphone"></i> Artistas</span>
+                <h3>@Html.DisplayFor(model => model.TotalArtistas)</h3>                
+            </li>
+            <li class="col-xs-6 col-lg-2">
+                <span class="title"><i class="fa fa-bullseye"></i> Albums</span>
+                <h3 class="color-up">@Html.DisplayFor(model => model.TotalAlbums)</h3>                
+            </li>
+            <li class="col-xs-6 col-lg-2"> 
+                <span class="title"><i class="fa fa-tag"></i> Gêneros Musicais</span>
+                <h3>@Html.DisplayFor(model => model.TotalGeneros)</h3>                
+            </li>
+            <li class="col-xs-6 col-lg-2"> 
+                <span class="title"><i class="glyphicon glyphicon-heart red"></i> Favoritas</span>
+                <h3 class="color-up">@Html.DisplayFor(model => model.TotalFavoritas)</h3>                
+            </li>
+            <li class="col-xs-6 col-lg-2">
+                <span class="title"><i class="fa fa-star"></i> 5 estrelas</span>
+                <h3 class="color-down">@Html.DisplayFor(model => model.TotalCincoEstrelas)</h3>                
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <!-- Start General Stats -->
+        <div class="col-md-12 col-lg-9">
+            <div class="panel panel-widget" style="height:205px;">
+                <div class="panel-title">
+                    Status Geral
+                </div>
+                <div class="panel-body">
+                    @Html.DivStatusGeralFor(model => model.RapHipHopPercent, "Rap/Hip - Hop", null)
+                    @Html.DivStatusGeralFor(model => model.RockPercent, "Rock")
+                    @Html.DivStatusGeralFor(model => model.PopPercent, "Pop")
+                    @Html.DivStatusGeralFor(model => model.PagodePercent, "Pagode")
+                    @Html.DivStatusGeralFor(model => model.ReligiousPercent, "Religious")
+                    @Html.DivStatusGeralFor(model => model.InstrumentalsPercent, "Instrumentals")
+                    @Html.DivStatusGeralFor(model => model.SoundTrackMoviesPercent, "Soundtrack")
+                </div>
+            </div>
+        </div>
+        <!-- End General Stats -->
+
+
+        <div class="col-md-6 col-lg-3">
+            <div class="widget socialbox" style="background:#007fc5; height:205px;">
+                <p class="text">
+                    Sem a música, a vida seria um erro
+                </p>
+                <p class="text-info">22 May, 2015 via mobile</p>
+                <div class="logo">
+                    <img src = "/img/Rdio_ico.ico" style="width: 60px;" />
+                </div>
+                <ul class="info">
+                    <li><i class="fa fa-thumbs-up"></i>694</li>
+                    <li><i class="fa fa-comment"></i>2.192</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 col-lg-7">
+            <div class="panel panel-widget">
+                <div class="panel-title">
+                    5 estrelas @*<input id="input-1" name="input-1" class="rating rating-loading" data-min="0" data-max="5" data-step="1">*@
+
+                    <div style="float:right">
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="basic-list">
+                        <li>Rap/Hip-Hop <span class="right label label-default">42.8%</span></li>
+                        <li>Rock <span class="right label label-danger">16.9%</span></li>
+                        <li>Pop <span class="right label label-success">15.5%</span></li>
+                        <li>Pagode <span class="right label label-primary">11.8%</span></li>
+                        <li>Religious <span class="right label label-danger">3.2%</span></li>
+                        <li>Instrumentals <span class="right label label-warning">3%</span></li>
+                        <li>Movies Soundtrack <span class="right label label-warning">0%</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-lg-5">
+            <div class="panel panel-widget" style="height:450px;">
+                <div class="panel-title">
+                    Some of my Favorites <span class="glyphicon glyphicons-heart"></span>
+                    @*<ul class="panel-tools">
+                            <li><a class="icon"><i class="fa fa-refresh"></i></a></li>
+                            <li><a class="icon closed-tool"><i class="fa fa-times"></i></a></li>
+                        </ul>*@
+                </div>
+                <div class="panel-body table-responsive">
+                    <table class="table table-dic table-hover ">
+                        <tbody>
+                            <tr>
+                                <td><i class="fa fa-folder-o"></i>Projects</td>
+                                <td>Folder</td>
+                                <td class="text-r">27/2/2015 12:34 AM</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-file-archive-o"></i>Backup</td>
+                                <td>Zip</td>
+                                <td class="text-r">27/2/2015 12:34 AM</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-file-code-o"></i>Kode Theme</td>
+                                <td>Html</td>
+                                <td class="text-r">27/2/2015 12:34 AM</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-file-pdf-o"></i>Documents</td>
+                                <td>Pdf</td>
+                                <td class="text-r">27/2/2015 12:34 AM</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-folder-o"></i>Themes</td>
+                                <td>Folder</td>
+                                <td class="text-r">27/2/2015 12:34 AM</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-folder-o"></i>Uploaded Files</td>
+                                <td>Folder</td>
+                                <td class="text-r">27/2/2015 12:34 AM</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa fa-folder-o"></i>Personal Files</td>
+                                <td>Folder</td>
+                                <td class="text-r">27/2/2015 12:34 AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="~/js/easypiechart/easypiechart.js"></script>
+<script src="~/js/easypiechart/easypiechart-plugin.js"></script>

@@ -1,0 +1,97 @@
+/*================================================================================
+	Item Name: Kode
+	Description: Premium Bootstrap Admin Template
+	Author: Egemen Kapusuz
+	Author URL: http://www.themeforest.net/user/egemem
+================================================================================*/
+
+/* ================================================
+Google Web Fonts
+================================================ */
+/* Montserrat */
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+/* Open Sans */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,800,300);
+
+/* === Icons === */
+/* Font Awesome */
+@import url('font-awesome.min.css');
+
+/* ionicons */
+@import url('ionicons.css');
+@import url('ionicons.min.css');
+
+/* ================================================
+Main Css
+================================================ */
+/* Bootstrap Main Css File (unedited) */
+@import url('bootstrap.css');
+
+/* Theme Style */
+@import url('style.css');
+
+/* Responsive Style */
+@import url('responsive.css');
+
+/* Shortcuts Css Codes */
+@import url('shortcuts.css');
+
+/* Rating Stars */
+@import url('star-rating.css');
+
+/* ================================================
+Plugin Css
+================================================ */
+/* Awesome Bootstrap Checkbox */
+@import url('plugin/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css');
+
+/* Bootstrap Select */
+@import url('plugin/bootstrap-select/bootstrap-select.css');
+
+/* Bootstrap Select */
+@import url('plugin/bootstrap-toggle/bootstrap-toggle.min.css');
+
+/* Bootstrap wysihtml5 */
+@import url('plugin/bootstrap-wysihtml5/bootstrap-wysihtml5.css');
+
+/* Summernote */
+@import url('plugin/summernote/summernote.css');
+@import url('plugin/summernote/summernote-bs3.css');
+
+/* Sweet Alert */
+@import url('plugin/sweet-alert/sweet-alert.css');
+
+/* Data Tables */
+@import url('plugin/datatables/datatables.css');
+
+/* Chartist */
+@import url('plugin/chartist/chartist.min.css');
+
+/* Rickshaw */
+@import url('plugin/rickshaw/rickshaw.css');
+@import url('plugin/rickshaw/detail.css');
+@import url('plugin/rickshaw/graph.css');
+@import url('plugin/rickshaw/legend.css');
+
+/* Date Range Picker */
+@import url('plugin/date-range-picker/daterangepicker-bs3.css');
+
+/* Full Calendar */
+@import url('plugin/fullcalendar/fullcalendar.css');
+
+/*
+@import url('~/css/plugin/album/simple-line-icons.min.css');
+@import url('~/css/plugin/album/bootstrap-switch.min.css');
+@import url('~/css/plugin/album/cubeportfolio.css');
+@import url('~/css/plugin/album/components-md.min.css');
+@import url('~/css/plugin/album/plugins-md.min.css');
+@import url('~/css/plugin/album/portfolio.min.css');
+@import url('~/css/plugin/album/layout.min.css');
+@import url('~/css/plugin/album/darkblue.min.css');
+@import url('~/css/plugin/album/custom.min.css');
+*/
+@import url('plugin/album/3-col-portfolio.css');
+
+/*=== glyphicons-extended === */
+
+
